@@ -1,6 +1,6 @@
 # utilities
 
-import string, json
+import string, json, os
 
 def rot13(chars):
     "Simple rot-13 encoder"
@@ -31,6 +31,9 @@ def readPropertiesFile(fileName, valtype):
     """
 
     props = {}
+
+    fileName = os.path.join(os.path.dirname(__file__), fileName)
+
     f = open(fileName, 'r')
     
     for line in f.readlines():
